@@ -29,7 +29,7 @@ cacheSolve <- function(x, ...) {
   ## checks if inverse is in cache and pulls the value out
   ## if not, calculates the inverse and enters it into makeCacheMatrix
   
-  inv <- x$getinv
+  inv <- x$getinv()
   
   if (!is.null(inv)){
     
@@ -42,7 +42,7 @@ cacheSolve <- function(x, ...) {
   
   ## otherwise calculates the inverse
   
-  matrixData <- x$get
+  matrixData <- x$get()
   inv <- solve(matrixData, ...)
   
   ## sets value of inverse in makeCacheData
